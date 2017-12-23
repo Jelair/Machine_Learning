@@ -27,19 +27,19 @@ df = pd.read_csv(file, header=None)
 y = df.loc[0:100, 4].values
 y = np.where( y == 'Iris-setosa', -1, 1)
 X= df.loc[0:100, [0,2]].values
-# plt.scatter(X[:50, 0], X[:50, 1], color='red', marker='o', label='setosa')
-# plt.scatter(X[50:100, 0], X[50:100, 1], color='blue', marker='x', label='versicolor')
-# plt.xlabel(u'花瓣长度',fontproperties='SimHei')
-# plt.ylabel(u'花镜长度',fontproperties='SimHei')
-# plt.legend(loc='upper left')
-#plt.show()
+plt.scatter(X[:50, 0], X[:50, 1], color='red', marker='o', label='setosa')
+plt.scatter(X[50:100, 0], X[50:100, 1], color='blue', marker='x', label='versicolor')
+plt.xlabel(u'花瓣长度',fontproperties='SimHei')
+plt.ylabel(u'花径长度',fontproperties='SimHei')
+plt.legend(loc='upper left')
+plt.show()
 
 ppn = perc.Perceptron(eta=0.1, n_iter=10)
 ppn.fit(X, y)
-# plt.plot(range(1, len(ppn.errors) + 1), ppn.errors, marker='o')
-# plt.xlabel('Epochs')
-# plt.ylabel(u'错误分类次数',fontproperties='SimHei')
-#plt.show()
+plt.plot(range(1, len(ppn.errors) + 1), ppn.errors, marker='o')
+plt.xlabel('Epochs')
+plt.ylabel(u'错误分类次数',fontproperties='SimHei')
+plt.show()
 
 from matplotlib.colors import ListedColormap
 import numpy as np
@@ -65,18 +65,18 @@ def plot_decision_regions(X, y, classifier, resolution=0.02):
     for idx, cl in enumerate(np.unique(y)):
         plt.scatter(x=X[y==cl, 0], y=X[y==cl, 1], alpha=0.8, c=cmap(idx), marker=markers[idx], label=cl)
 
-# plot_decision_regions(X, y, ppn)
-# plt.xlabel(u'花瓣长度',fontproperties='SimHei')
-# plt.ylabel(u'花镜长度',fontproperties='SimHei')
-# plt.legend(loc='upper left')
-#plt.show()
+plot_decision_regions(X, y, ppn)
+plt.xlabel(u'花瓣长度',fontproperties='SimHei')
+plt.ylabel(u'花径长度',fontproperties='SimHei')
+plt.legend(loc='upper left')
+plt.show()
 
 ada = adal.AdalineGD(eta=0.0001, n_iter=50)
 ada.fit(X, y)
 plot_decision_regions(X, y, classifier=ada)
 plt.title('Adaline-Gradient descent')
 plt.xlabel(u'花瓣长度',fontproperties='SimHei')
-plt.ylabel(u'花镜长度',fontproperties='SimHei')
+plt.ylabel(u'花径长度',fontproperties='SimHei')
 plt.legend(loc='upper left')
 plt.show()
 
