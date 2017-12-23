@@ -9,7 +9,7 @@ Machine Learning:
 ![alt text](https://github.com/SimpleFly2016/Machine_Learning/raw/master/img/Figure_3.png)
 4. The results of the Adaline classification.
 ![alt text](https://github.com/SimpleFly2016/Machine_Learning/raw/master/img/Figure_4.png)
-5.The relationship between misclassified errors and iterations.
+5. The relationship between misclassified errors and iterations.
 ![alt text](https://github.com/SimpleFly2016/Machine_Learning/raw/master/img/Figure_5.png)
-###If you have any question, please contract me by follow way:
-*Gmail: jlzhangood@gmail.com
+### If you have any question, please contract me by follow way:
+* Gmail: jlzhangood@gmail.com
